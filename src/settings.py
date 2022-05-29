@@ -1,0 +1,70 @@
+import os
+from pathlib import Path
+
+# Paths
+DATA_DIR = Path(__file__).resolve().parents[1] / 'data'
+
+BASE_CHECKPOINT_PATH_MAIN = DATA_DIR / 'output' / 'checkpoint-base'
+BASE_SAVE_MODEL_PATH_MAIN = DATA_DIR / 'output' / 'model-base'
+BASE_SOURCE_DATA_PATH_MAIN = DATA_DIR / 'input' / 'main-v3' / 'source'
+BASE_TRAIN_DATA_PATH_MAIN = DATA_DIR / 'input' / 'main-v3' / 'train'
+BASE_VALIDATE_DATA_PATH_MAIN = DATA_DIR / 'input' / 'main-v3' / 'validate'
+BASE_TEST_DATA_PATH_MAIN = DATA_DIR / 'input' / 'main-v3' / 'test'
+
+USER_INITIAL_WEIGHTS_PATH = DATA_DIR / 'output' / 'model-base-220522'
+USER_CHECKPOINT_PATH_MAIN = DATA_DIR / 'output' / 'checkpoint-user'
+USER_SAVE_MODEL_PATH_MAIN = DATA_DIR / 'output' / 'model-user'
+USER_SOURCE_DATA_PATH_MAIN = DATA_DIR / 'input' / 'user-v1' / 'source'
+USER_TRAIN_DATA_PATH_MAIN = DATA_DIR / 'input' / 'user-v1' / 'train'
+USER_VALIDATE_DATA_PATH_MAIN = DATA_DIR / 'input' / 'user-v1' / 'validate'
+USER_TEST_DATA_PATH_MAIN = DATA_DIR / 'input' / 'user-v1' / 'test'
+
+
+# Classes
+CLASSES_MAIN = [
+    'А', 'Б', 'В',
+    'Г', 'Д', 'Е',
+    'Ж', 'З', 'И',
+    'К', 'Л', 'М',
+    'Н', 'О', 'П',
+    'Р', 'С', 'Т',
+    'У', 'Ф', 'Х',
+    'Ц', 'Ч', 'Ш',
+    'Ъ', 'Ы', 'Ь',
+    'Э', 'Ю', 'Я'
+]
+
+# Image
+IMAGE_SIZE = (224, 224)
+
+# Training, Validation
+BASE_TRAINING_EPOCHS = 40
+BASE_TRAINING_NBATCH = 256
+BASE_VALIDATION_NBATCH = 128
+BASE_TRAINING_FINE_TUNING_EPOCHS = int(BASE_TRAINING_EPOCHS / 4)
+
+USER_TRAINING_EPOCHS = 20
+USER_TRAINING_NBATCH = 128
+USER_VALIDATION_NBATCH = 64
+USER_TRAINING_FINE_TUNING_EPOCHS = int(USER_TRAINING_EPOCHS / 4)
+
+# Monitoring
+COMET_API_KEY = os.getenv('COMET_API_KEY')
+MONITORING = True
+LOG_CONFUSION_MATRIX = True
+
+# Current Config
+CLASSES = CLASSES_MAIN
+BASE_CHECKPOINT_PATH = BASE_CHECKPOINT_PATH_MAIN
+BASE_SAVE_MODEL_PATH = BASE_SAVE_MODEL_PATH_MAIN
+BASE_SOURCE_DATA_PATH = BASE_SOURCE_DATA_PATH_MAIN
+BASE_TRAIN_DATA_PATH = BASE_TRAIN_DATA_PATH_MAIN
+BASE_VALIDATE_DATA_PATH = BASE_VALIDATE_DATA_PATH_MAIN
+BASE_TEST_DATA_PATH = BASE_TEST_DATA_PATH_MAIN
+
+USER_CHECKPOINT_PATH = USER_CHECKPOINT_PATH_MAIN
+USER_SAVE_MODEL_PATH = USER_SAVE_MODEL_PATH_MAIN
+USER_SOURCE_DATA_PATH = USER_SOURCE_DATA_PATH_MAIN
+USER_TRAIN_DATA_PATH = USER_TRAIN_DATA_PATH_MAIN
+USER_VALIDATE_DATA_PATH = USER_VALIDATE_DATA_PATH_MAIN
+USER_TEST_DATA_PATH = USER_TEST_DATA_PATH_MAIN

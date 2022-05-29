@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff
+*.log
+*django.mo
+
+# Docker
+data
+
+# dotenv
+.env
+
+# Configs
+etc/docker/env
+src/core/environments/local.py
+
+# Ansible
+*.retry
+
+# Celery
+src/celerybeat.pid
+src/celerybeat-schedule
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+# IDE
+.idea/
+
+# Deployment and development files
+data/
+docs/
+src/db.sqlite3
